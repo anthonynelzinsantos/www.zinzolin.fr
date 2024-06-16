@@ -234,6 +234,9 @@ h6 {
 
 .subscribe {
 	align-self: end;
+	display: flex;
+		gap: 1em;
+		justify-content: center;
 	grid-column: 2;
 	grid-row: 3;
 	margin: 0 0 1em 0;
