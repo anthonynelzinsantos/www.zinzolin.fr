@@ -57,8 +57,21 @@
 			{{ if .IsHome }}
 				<h1 class="title">{{ .Site.Title }}</h1>
 			{{ else }}
-				<a href="{{ "/" | absURL }}" title="Revenir à la liste des archives de {{ .Site.Title }}"><h1 class="title">{{ .Site.Title }}</h1></a>
+				<h1 class="title"><a href="{{ "/" | absURL }}" title="Revenir à la liste des archives de {{ .Site.Title }}">{{ .Site.Title }}</a></h1>
 			{{ end }}
+			
+			<nav class="menu">
+			{{ $currentPage := . }}
+			{{ range site.Menus.header }}
+				{{ if $currentPage.IsMenuCurrent .Menu . }}
+				<a class="active item" aria-current="page" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+				{{ else if $currentPage.HasMenuCurrent .Menu . }}
+				<a class="active item" aria-current="true" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+				{{ else }}
+				<a class="item" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+				{{ end }}
+			{{ end }}
+			</nav>
 		</header>
 		
 		<div class="wrapper">
@@ -67,6 +80,10 @@
 			<main id="main">
 				{{ block "main" . }}{{ end }}
 			</main>
+			
+			<nav class="subscribe">
+				Like and subscribe !
+			</nav>
 		</div>
 		
 		<footer id="footer">

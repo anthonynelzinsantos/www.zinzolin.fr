@@ -6,7 +6,7 @@
 <div class="section">
 	{{ with .Site.GetPage "section" $section }}
 	<div class="heading">
-		<a href="{{ .Permalink }}"><h1>{{ .Title }}</h1></a>
+		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 		{{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
 	</div>
 	{{ end }}
@@ -17,7 +17,7 @@
 	{{ else }}
 		{{ range first $amount $pages }}
 		<div class="item">
-			<a href="{{ .Permalink }}" title="{{ .Title }}"><h2>{{ .Title | markdownify }}</h2></a>
+			<h2><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title | markdownify }}</a></h2>
 			<time datetime="{{ .PublishDate }}">{{ .PublishDate | time.Format ":date_short" }}</time>
 		</div>
 		{{ end }}

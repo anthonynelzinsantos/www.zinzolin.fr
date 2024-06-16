@@ -8,6 +8,20 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+menus:
+    header:
+    - name: "écrire"
+      pageRef: /ecrire
+      title: "Lire toutes les notes"
+      weight: 1
+    - name: "lire"
+      pageRef: /lire
+      title: "Lire toutes les notes de lecture"
+      weight: 2
+    - name: "marcher"
+      pageRef: /marcher
+      title: "Lire toutes les notes en chemin"
+      weight: 3
 params:
     tint: 320
 theme: "zinzolin"
