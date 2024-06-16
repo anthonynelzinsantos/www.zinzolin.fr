@@ -1,0 +1,18 @@
+{{ if .IsHome }}
+	<h1 class="title"><span class="logo">{{ .Site.Title }}</span></h1>
+{{ else }}
+	<h1 class="title"><a class="logo" href="{{ "/" | absURL }}" title="Revenir à la liste des archives de {{ .Site.Title }}">{{ .Site.Title }}</a></h1>
+{{ end }}
+
+<nav class="menu">
+{{ $currentPage := . }}
+{{ range site.Menus.header }}
+	{{ if $currentPage.IsMenuCurrent .Menu . }}
+	<a class="active item" aria-current="page" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+	{{ else if $currentPage.HasMenuCurrent .Menu . }}
+	<a class="active item" aria-current="true" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+	{{ else }}
+	<a class="item" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+	{{ end }}
+{{ end }}
+</nav>

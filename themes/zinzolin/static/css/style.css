@@ -120,9 +120,39 @@ h6 {
 
 #header .title {
 	align-self: end;
+	color: var(--h-text);
 	font-size: 1.618em;
+	line-height: 1;
 	grid-row: 1;
 	text-transform: lowercase;
+}
+
+#header .title .logo:after {
+	content: url("/logo.svg");
+	color: var(--h-text);
+	display: inline-block;
+	line-height: 1;
+	mix-blend-mode: soft-light;
+	vertical-align: super;
+}
+
+#header .title:has(a:focus),
+#header .title:has(a:hover) {
+	font-style: italic;
+}
+
+#header .title:has(a:focus) .logo:after,
+#header .title:has(a:hover) .logo:after {
+	animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center 55%;
+}
+
+@keyframes rotate{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 #header .menu {
