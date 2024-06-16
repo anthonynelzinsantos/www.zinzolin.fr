@@ -1,0 +1,15 @@
+{{ $content := .Get "content" }}
+{{ $author := .Get "author" }}
+{{ $cite := .Get "cite" }}
+{{ $permalink := .Get "permalink" }}
+
+<figure class="blockquote">
+	<blockquote cite="{{ $permalink }}">
+		{{ $content | markdownify }}
+	</blockquote>
+	
+	{{ with $cite }}
+	<figcaption>—&nbsp;{{ with $author }}{{ $author | markdownify }}, {{ end }}{{ with $cite }}{{ with $permalink }}<a href="{{ $permalink }}" title='{{ T "quote_cite"}}'>{{ end }}{{ $cite | markdownify }}{{ with $permalink }}</a>{{ end }}{{ end }}
+	</figcaption>
+	{{ end }}
+</figure>

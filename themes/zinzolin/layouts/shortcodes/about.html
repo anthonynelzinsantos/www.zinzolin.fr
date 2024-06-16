@@ -1,0 +1,26 @@
+{{ $size := .Get "size" }}
+{{ $title_first := .Get "title_first" }}
+{{ $content_first := .Get "content_first" }}
+{{ $title_second := .Get "title_second" }}
+{{ $content_second := .Get "content_second" }}
+
+{{ if eq $size "full" }}
+	<div class="about {{ $size }} dark">
+		<div class="{{ $size }}">
+			<h2>{{ $title_first | markdownify }}</h2>
+			<p>{{ $content_first | markdownify }}</p>
+		</div>
+	</div>
+{{ else }}
+	<div class="about dark">
+		<div class="{{ $size }}">
+			<h2>{{ $title_first | markdownify }}</h2>
+			<p>{{ $content_first | markdownify }}</p>
+		</div>
+		
+		<div class="{{ $size }}">
+			<h2>{{ $title_second | markdownify }}</h2>
+			<p>{{ $content_second | markdownify }}</p>
+		</div>
+	</div>
+{{ end }}

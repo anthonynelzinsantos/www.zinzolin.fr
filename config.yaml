@@ -8,6 +8,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+params:
+    tint: 320
 theme: "zinzolin"
 timeZone: "Europe/Paris"
 timeout: 60s

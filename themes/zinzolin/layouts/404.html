@@ -1,0 +1,10 @@
+{{ define "main" }}
+	<h1 class="title">Erreur 404</h1>
+    <div class="description"><p>La page que vous avez demandée nʼa pas été trouvée.</p></div>
+
+  	<h2>Articles récents</h2> 
+  	{{ range .Site.RegularPages.Limit 10 }}
+		<h3 class="list"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a><time datetime="{{ .PublishDate }}">{{ .PublishDate | time.Format ":date_short" }}</time></h3>
+	{{ end }}
+</div>
+{{ end }}

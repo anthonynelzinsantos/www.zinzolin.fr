@@ -1,0 +1,20 @@
+{{ $video := .Page.Resources.GetMatch (printf "%s.mp4" (.Get "src")) }}
+{{ $poster := .Page.Resources.GetMatch (printf "%s.jpg" (.Get "src")) }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $credit := .Get "credit" }}
+{{ $licence := .Get "licence" }}
+{{ $width := .Get "width" }}
+
+<figure class="image {{ $width }}">
+	<video aria-hidden="true" controls loop playsinline poster="{{ $poster }}" preload="none" src="{{ $video }}">
+	</video>
+	
+	{{ if $caption }}
+		<details class="figcaption" name="picture">
+			<summary></summary>
+		
+			<p class="caption">{{ with $caption }}{{ . | markdownify }}{{ end }}{{ with $credit }}<span class="credit">{{ T "text_video" }}&nbsp;{{ . | markdownify }}{{ with $licence }} ({{ . | markdownify }}){{ end }}.</span>{{ end }}</p>
+		</details>
+	{{ end }}
+</figure>

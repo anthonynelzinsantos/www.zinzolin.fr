@@ -1,0 +1,54 @@
+{{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $credit := .Get "credit" }}
+{{ $licence := .Get "licence" }}
+{{ $width := .Get "width" }}
+
+{{ if ge $image.Width $image.Height }}
+	{{ $small := $image.Resize "430x" }}
+	{{ $medium := $image.Resize "1600x" }}
+	{{ $large := $image.Resize "860x" }}
+	{{ $default := $image.Resize "3200x" }}
+	
+	<figure class="image landscape {{ $width }}">
+		<picture>
+			<source media="(max-width: 430px)" srcset="{{ $small.RelPermalink }} 1x, {{ $large.RelPermalink }} 2x" type="image/webp" />
+			<source media="(min-width: 431px)" srcset="{{ $medium.RelPermalink }} 1x, {{ $default.RelPermalink }} 2x" type="image/webp" />
+			<img alt='{{ if $alt }}{{ $alt }}{{ else }}{{ $caption | plainify }}{{ end }}' aria-hidden="true" decoding="async" loading="lazy" src="{{ $medium.RelPermalink }}" width="{{ $medium.Width }}" />
+		</picture>
+		
+		{{ if or ($caption) ($credit) }}
+			<details class="figcaption" name="picture">
+				<summary></summary>
+			
+				<p class="caption">{{ with $caption }}{{ . | markdownify }}{{ end }}{{ with $credit }}<span class="credit">{{ T "text_image" }}&nbsp;{{ . | markdownify }}{{ with $licence }} ({{ . | markdownify }}){{ end }}.</span>{{ end }}</p>
+			
+				{{ with $image.Exif }}{{ if .Tags.FocalLength }}<p class="exif"><span>{{ with .Tags.Manufacturer }}{{ . }}{{ end }}&nbsp;{{ with .Tags.Model }}{{ . }}{{ end }}&nbsp;{{ T "text_to" }}&nbsp;{{ lang.FormatNumber 0 .Tags.FocalLength }}&nbsp;mm</span>{{ end }}{{ with .Tags.ISOSpeedRatings }}<span>ISO&nbsp;{{ . }}</span>{{ end }}{{ with .Tags.ExposureTime }}<span>{{ . }}&nbsp;s</span>{{ end }}{{ with .Tags.FNumber }}<span>ƒ/{{ lang.FormatNumber 1 . }}</span></p>{{ end }}{{ end }}
+			</details>
+		{{ end }}
+	</figure>
+{{ else }}
+	{{ $small := $image.Resize "x430" }}
+	{{ $medium := $image.Resize "x1600" }}
+	{{ $large := $image.Resize "x860" }}
+	{{ $default := $image.Resize "x3200" }}
+	
+	<figure class="image portrait {{ $width }}">
+		<picture>
+			<source media="(max-width: 430px)" srcset="{{ $small.RelPermalink }} 1x, {{ $large.RelPermalink }} 2x" type="image/webp" />
+			<source media="(min-width: 431px)" srcset="{{ $medium.RelPermalink }} 1x, {{ $default.RelPermalink }} 2x" type="image/webp" />
+			<img alt='{{ if $alt }}{{ $alt }}{{ else }}{{ $caption | plainify }}{{ end }}' aria-hidden="true" decoding="async" loading="lazy" src="{{ $medium.RelPermalink }}" width="{{ $medium.Width }}" />
+		</picture>
+		
+		{{ if or ($caption) ($credit) }}
+			<details class="figcaption" name="picture">
+				<summary></summary>
+			
+				<p class="caption">{{ with $caption }}{{ . | markdownify }}{{ end }}{{ with $credit }}<span class="credit">{{ T "text_image" }}&nbsp;{{ . | markdownify }}{{ with $licence }} ({{ . | markdownify }}){{ end }}.</span>{{ end }}</p>
+			
+				{{ with $image.Exif }}{{ if .Tags.FocalLength }}<p class="exif"><span>{{ with .Tags.Manufacturer }}{{ . }}{{ end }}&nbsp;{{ with .Tags.Model }}{{ . }}{{ end }}&nbsp;{{ T "text_to" }}&nbsp;{{ lang.FormatNumber 0 .Tags.FocalLength }}&nbsp;mm</span>{{ end }}{{ with .Tags.ISOSpeedRatings }}<span>ISO&nbsp;{{ . }}</span>{{ end }}{{ with .Tags.ExposureTime }}<span>{{ . }}&nbsp;s</span>{{ end }}{{ with .Tags.FNumber }}<span>ƒ/{{ lang.FormatNumber 1 . }}</span></p>{{ end }}{{ end }}
+			</details>
+		{{ end }}
+	</figure>
+{{ end }}

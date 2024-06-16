@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "fr" }}">
+	<head>
+		<meta charset="utf-8">
+	
+		<title>{{ if not .IsHome }}{{ .Params.Title | markdownify | plainify }} | {{ end }}{{ .Site.Title }}</title>
+		
+		<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+		{{ template "_internal/opengraph.html" . }}
+		{{ template "_internal/schema.html" . }}
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		
+		<style media="screen">
+			:root {
+				--background: lch(95 5 {{ default 320 .Site.Params.Tint }});
+				--theme: lch(25 85 {{ default 320 .Site.Params.Tint }});
+				--h-border: lch(20 80 {{ default 320 .Site.Params.Tint }});
+				--h-shadow: lch(70 25 {{ default 320 .Site.Params.Tint }});
+				--h-text: lch(95 10 {{ default 320 .Site.Params.Tint }});
+				--m-border: lch(85 10 {{ default 320 .Site.Params.Tint }});
+				--m-shadow: lch(85 15 {{ default 320 .Site.Params.Tint }});
+				--text: lch(15 5 {{ default 320 .Site.Params.Tint }});
+				--subtext: lch(45 10 {{ default 320 .Site.Params.Tint }});
+			}
+			
+			{{ $page := absURL "" }}
+			{{ $site := urls.Parse $page }}
+			#main .content a[href]:not(:where(
+				[href^="#"],
+				[href^="/"]:not([href^="//"]),
+				[href*="//{{ $site.Hostname }}"],
+				[href*="//localhost:1313"],
+			)):after {
+				content: "➹";
+			}
+			
+			#main .content a[href]:where(
+				[href*="//{{ $site.Hostname }}"],
+				[href*="//localhost:1313"]
+			):not(:where(
+				[href^="#"],
+				[href^="/"]:not([href^="//"])
+			)):after {
+				content: "＊";
+			}
+		</style>
+		<link rel="stylesheet" href="{{ "/css/style.css" | absURL }}">
+		<link rel="shortcut icon" href="{{ "/images/favicon.ico" | absURL }}" type="image/x-icon" />
+		
+		{{ with .OutputFormats.Get "RSS" }}
+			<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+		{{ end }}
+	</head>
+	
+	<body>
+		<header id="header">
+			{{ if .IsHome }}
+				<h1 class="title">{{ .Site.Title }}</h1>
+			{{ else }}
+				<a href="{{ "/" | absURL }}" title="Revenir à la liste des archives de {{ .Site.Title }}"><h1 class="title">{{ .Site.Title }}</h1></a>
+			{{ end }}
+		</header>
+		
+		<div class="wrapper">
+			{{ block "sidebar" . }}{{ end }}
+		
+			<main id="main">
+				{{ block "main" . }}{{ end }}
+			</main>
+		</div>
+		
+		<footer id="footer">
+			{{ with .Site.Copyright }}
+				<div class="copyright">
+					{{ . | markdownify }}
+				</div>
+			{{ end }}
+		</footer>
+	</body>
+</html>

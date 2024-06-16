@@ -1,0 +1,10 @@
+name: "Zinzolin"
+license: "EUPL 1.2"
+licenselink: "https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12"
+description: "A colorful theme for colorful people."
+homepage: "https://github.com/anthonynelzinsantos/zinzolin"
+min_version: "0.100"
+
+author:
+    name: "Anthony Nelzin-Santos"
+    homepage: "https://a17s.net"

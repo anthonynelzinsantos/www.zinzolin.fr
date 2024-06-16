@@ -1,0 +1,26 @@
+{{ $amount := .Get "amount" }}
+{{ $section := .Get "section" }}
+{{ $type := .Get "type" }}
+{{ $pages := where (where .Site.RegularPages "Section" $section) "Params.Hidden" "!=" true }}
+
+<div class="section">
+	{{ with .Site.GetPage "section" $section }}
+	<div class="heading">
+		<a href="{{ .Permalink }}"><h1>{{ .Title }}</h1></a>
+		{{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
+	</div>
+	{{ end }}
+	
+	<div class="list">
+	{{ if eq $type "image" }}
+		
+	{{ else }}
+		{{ range first $amount $pages }}
+		<div class="item">
+			<a href="{{ .Permalink }}" title="{{ .Title }}"><h2>{{ .Title | markdownify }}</h2></a>
+			<time datetime="{{ .PublishDate }}">{{ .PublishDate | time.Format ":date_short" }}</time>
+		</div>
+		{{ end }}
+	{{ end }}
+	</div>
+</div>
