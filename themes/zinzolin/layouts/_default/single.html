@@ -1,7 +1,24 @@
 {{ define "sidebar" }}
-	<div class="sidebar">
-		<time class="time" datetime="{{ .PublishDate }}">{{ .PublishDate | time.Format ":date_long" }}</time>
-	</div>
+	<aside id="sidebar">
+		<div class="section">
+			<h1>Date</h1>
+			<time class="time" datetime="{{ .PublishDate }}">{{ .PublishDate | time.Format ":date_long" }}</time>
+		</div>
+		
+		<div class="section">
+			<h1>Auteur</h1>
+			{{ range .Params.Author }}
+				<a href="{{ "/auteur/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+			{{ end }}
+		</div>
+		
+		<div class="section">
+			<h1>Index</h1>
+			{{ range .Params.Index }}
+				<a href="{{ "/index/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+			{{ end }}
+		</div>
+	</aside>
 {{ end }}
 
 {{ define "main" }}

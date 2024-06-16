@@ -4,7 +4,7 @@ title: "L’Artisan Pastellier — Encre classique Violette"
 publishDate: 2018-09-09T17:00:00+01:00
 date: 2018-09-09T17:00:00+01:00
 credit: "Anthony Nelzin-Santos"
-signe:
+author:
 - "Anthony Nelzin-Santos"
 index:
 - "Encre"

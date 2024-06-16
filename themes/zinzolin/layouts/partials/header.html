@@ -1,7 +1,7 @@
 {{ if .IsHome }}
 	<h1 class="title"><span class="logo">{{ .Site.Title }}</span></h1>
 {{ else }}
-	<h1 class="title"><a class="logo" href="{{ "/" | absURL }}" title="Revenir à la liste des archives de {{ .Site.Title }}">{{ .Site.Title }}</a></h1>
+	<h1 class="title"><a class="logo" href="{{ "/" | absURL }}" title="Revenir à la page dʼaccueil de {{ .Site.Title }}">{{ .Site.Title }}</a></h1>
 {{ end }}
 
 <nav class="menu">

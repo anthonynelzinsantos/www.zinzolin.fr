@@ -34,6 +34,9 @@ params:
     - lire
     - marcher
     tint: 320
+taxonomies:
+    author: auteur
+    index: index
 theme: "zinzolin"
 timeZone: "Europe/Paris"
 timeout: 60s

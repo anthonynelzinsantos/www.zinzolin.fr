@@ -3,7 +3,7 @@ title: "Herbin — Violette Pensée"
 publishDate: 2018-02-17T18:00:00+02:00
 date: 2018-02-17T18:00:00+02:00
 credit: "Anthony Nelzin-Santos"
-signe:
+author:
 - "Anthony Nelzin-Santos"
 index:
 - "Encre"

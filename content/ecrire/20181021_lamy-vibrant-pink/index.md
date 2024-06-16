@@ -4,7 +4,7 @@ title: "Lamy — Vibrant Pink"
 publishDate: 2018-10-21T15:00:00+01:00
 date: 2018-10-21T15:00:00+01:00
 credit: "Anthony Nelzin-Santos"
-signe:
+author:
 - "Anthony Nelzin-Santos"
 index:
 - "Encre"

@@ -3,7 +3,7 @@ title: "Lamy — Dark Lilac (2024)"
 publishDate: 2024-03-11T09:00:00+02:00
 date: 2024-03-11T09:00:00+02:00
 credit: "Anthony Nelzin-Santos"
-signe:
+author:
 - "Anthony Nelzin-Santos"
 index:
 - "Encre"

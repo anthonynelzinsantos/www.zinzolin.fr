@@ -3,7 +3,7 @@ title: "Lamy — AL-star Vibrant Pink"
 publishDate: 2018-08-19T19:00:00+01:00
 date: 2018-08-19T19:00:00+01:00
 credit: "Anthony Nelzin-Santos"
-signe:
+author:
 - "Anthony Nelzin-Santos"
 index:
 - "Lamy"

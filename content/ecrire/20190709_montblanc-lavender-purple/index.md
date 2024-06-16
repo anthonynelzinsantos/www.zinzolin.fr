@@ -3,7 +3,7 @@ title: "Montblanc — Lavender Purple"
 publishDate: 2019-06-09T16:00:00+02:00
 date: 2019-06-09T16:00:00+02:00
 credit: "Anthony Nelzin-Santos"
-signe:
+author:
 - "Anthony Nelzin-Santos"
 index:
 - "Encre"
