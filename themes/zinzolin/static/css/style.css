@@ -75,8 +75,8 @@ body {
 	background: var(--b-background);
 	color: var(--text);
 	display: grid;
-		grid-template-columns: 3em 1fr 3em 3fr 3em;
-		grid-template-rows: 13em 3em 5em 1fr 5em 3em 13em;
+		grid-template-columns: 3rem 1fr 3rem 3fr 3rem;
+		grid-template-rows: 13rem 3rem 5rem 1fr 5rem 3rem 13rem;
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 1.6;
@@ -96,7 +96,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: 1em;
+	font-size: 1rem;
 	font-weight: normal;
 	margin: 0;
 }
@@ -107,23 +107,23 @@ h6 {
 	border-right: 1px solid var(--h-border);
 	border-bottom: 1px solid var(--h-border);
 	border-left: 1px solid var(--h-border);
-	border-radius: 0 0 .5em .5em;
-	box-shadow: 0 0 .5em 0 var(--h-shadow);
+	border-radius: 0 0 .5rem .5rem;
+	box-shadow: 0 0 .5rem 0 var(--h-shadow);
 	display: grid;
 		grid-template-columns: subgrid;
 		grid-template-rows: subgrid;
 	grid-column: 2;
 	grid-row: 1/4;
-	padding: 1em 1em 1em 1em;
+	padding: 1rem 1rem 1rem 1rem;
 	z-index: 2;
 }
 
 #header .title {
 	align-self: end;
 	color: var(--h-text);
-	font-size: 1.618em;
+	font-size: 1.618rem;
 	font-weight: 800;
-	line-height: .95em;
+	line-height: .95rem;
 	grid-row: 1;
 	text-transform: lowercase;
 }
@@ -162,13 +162,13 @@ h6 {
 #header .menu {
 	align-self: end;
 	grid-row: -1;
-	line-height: 2em;
+	line-height: 2rem;
 }
 
 #header .menu .item {
 	border: 1px solid var(--h-text);
-	border-radius: 1em;
-	padding: .1em .5em .1em .5em;
+	border-radius: 1rem;
+	padding: .1rem .5rem .1rem .5rem;
 }
 
 #header .menu .active {
@@ -186,7 +186,7 @@ h6 {
 
 #header .menu .item .count {
 	color: var(--h-accent);
-	font-size: .618em;
+	font-size: .618rem;
 	line-height: 1;
 	vertical-align: super;
 }
@@ -203,8 +203,8 @@ h6 {
 .wrapper {
 	background: var(--m-background);
 	border: 1px solid var(--m-border);
-	border-radius: 1em;
-	box-shadow: 0 .5em 1em 0 var(--m-shadow);
+	border-radius: 1rem;
+	box-shadow: 0 .5rem 1rem 0 var(--m-shadow);
 	display: grid;
 		grid-template-columns: subgrid;
 		grid-template-rows: subgrid;
@@ -219,7 +219,7 @@ h6 {
 }
 
 #main .section + .section {
-	margin-block-start: 5em;
+	margin-block-start: 5rem;
 }
 
 #main .heading .title {
@@ -228,13 +228,13 @@ h6 {
 
 #main .heading .subtitle {
 	font-weight: 600;
-	margin-block-start: 1em;
+	margin-block-start: 1rem;
 }
 
 #main .section .list .item {
 	display: flex;
 		align-items: center;
-		gap: 1em;
+		gap: 1rem;
 		justify-content: space-between;
 	width: 100%;
 }
@@ -251,7 +251,7 @@ h6 {
 }
 
 #main .content a[href]:after {
-	font-size: .9em;
+	font-size: .9rem;
 	line-height: 1;
 	vertical-align: super;
 }
@@ -259,26 +259,26 @@ h6 {
 #main .content blockquote {
 	border-left: 2px solid var(--theme);
 	color: var(--subtext);
-	margin: 0 0 1em 0;
-	padding: 0 0 0 1em;
+	margin: 0 0 1rem 0;
+	padding: 0 0 0 1rem;
 }
 
 #main .content h1 {
-	font-size: 1.618em;
+	font-size: 1.618rem;
 	font-weight: 800;
-	line-height: .95em;
+	line-height: .95rem;
 }
 
 #main .content h2 {
 	font-weight: 600;
-	margin-block-start: 5em;
-	margin-block-end: 1em;
+	margin-block-start: 5rem;
+	margin-block-end: 1rem;
 }
 
 #main .content h3 {
 	font-style: italic;
-	margin-block-start: 2.5em;
-	margin-block-end: .5em;
+	margin-block-start: 2.5rem;
+	margin-block-end: .5rem;
 }
 
 #main .content hr {
@@ -286,13 +286,13 @@ h6 {
 	border: none;
 	display: block;
 	height: 2px;
-	margin: 2.5em auto;
+	margin: 2.5rem auto;
 	width: 25%;
 }
 
 #main .content p {
-	margin-block-start: 1em;
-	margin-block-end: 1em;
+	margin-block-start: 1rem;
+	margin-block-end: 1rem;
 }
 
 #main .content p:last-of-type {
@@ -301,29 +301,29 @@ h6 {
 
 #main .content:last-child::after {
 	background: var(--theme);
-	border-radius: 1em;
+	border-radius: 1rem;
 	content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='.618em' fill='white' viewBox='0 0 1000 1000'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M648.055 320.452L568.135 464.631L567.82 467.047L665.803 448.752L714.01 263.366L651.126 275.363L597.315 240.683L591.62 284.393L648.055 320.452ZM422 490.74L423.676 488.97L333.653 446.178L185.684 567.824L243.611 595.08L266.76 654.767L297.059 622.753L272.597 560.408L273.153 560.149L273.079 559.958L340.052 528.954L422 490.74ZM331.243 709.874L353.222 765.888L434.934 975.852L435.409 975.35L435.606 975.852L547.632 856.551L711.431 847.853L711.037 847.125L711.746 847.086L645.618 725.679L930.83 708.616L851.78 564.834L893.698 406.2L757.8 431.574L829.707 155.051L668.535 185.801L530.618 96.9143L512.756 234.003L271.986 80.1646L251.426 242.95L124.271 346.65L249.129 406L28.4176 587.447L176.882 657.305L236.214 810.281L331.243 709.874ZM395.785 641.679L432.124 735.054L465.494 820.099L494.363 789.525L509.363 773.55L572.983 769.995L552.034 731.278L485.346 735.267L465.257 571.65L464.09 569.508L395.785 641.679ZM321.423 346.567L373.156 304.037L485.581 424.599L487.785 425.646L500.664 326.806L339.247 223.67L331.225 287.184L281.613 327.644L321.423 346.567ZM555.57 555.512L717.392 586.967L734.247 522.149L777.576 514.059L761.221 575.953L792.064 632.053L600.854 643.492L553.461 555.905L555.57 555.512Z'%3E%3C/path%3E%3C/svg%3E%0A");
 	display: inline-flex;
 		align-items: center;
-	height: 1em;
-	padding: 0 0 0 .191em;
-	width: 1em;
+	height: 1rem;
+	padding: 0 0 0 .191rem;
+	width: 1rem;
 }
 
 .sidebar {
 	grid-column: 2;
 	grid-row: 3;
-	margin: 1em 0 0 0;
+	margin: 1rem 0 0 0;
 }
 
 .subscribe {
 	align-self: end;
 	display: flex;
-		gap: 1em;
+		gap: 1rem;
 		justify-content: center;
 	grid-column: 2;
 	grid-row: 3;
-	margin: 0 0 1em 0;
+	margin: 0 0 1rem 0;
 }
 
 .subscribe a:hover {
@@ -336,14 +336,15 @@ h6 {
 	border-top: 1px solid var(--h-border);
 	border-right: 1px solid var(--h-border);
 	border-left: 1px solid var(--h-border);
-	border-radius: .5em .5em 0 0;
-	box-shadow: 0 .5em .5em 0 var(--h-shadow);
+	border-radius: .5rem .5rem 0 0;
+	box-shadow: 0 .5rem .5rem 0 var(--h-shadow);
 	color: var(--h-text);
 	display: grid;
 		grid-template-columns: subgrid;
 		grid-template-rows: subgrid;
+	font-size: .618rem;
 	grid-column: 2;
 	grid-row: -1/-4;
-	padding: 1em 1em 1em 1em;
+	padding: 1rem 1rem 1rem 1rem;
 	z-index: 2;
 }
