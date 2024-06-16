@@ -133,7 +133,7 @@ h6 {
 	color: var(--h-text);
 	display: inline-block;
 	line-height: 1;
-	mix-blend-mode: soft-light;
+	opacity: .618;
 	vertical-align: super;
 }
 
