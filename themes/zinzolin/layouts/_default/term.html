@@ -2,7 +2,7 @@
 {{ $pages := where (where .RegularPages "Type" "!=" "page") "Params.Hidden" "!=" true }}
 
 <div class="heading">
-	<h1 class="title"><a href="{{ .Permalink }}">{{ with .Parent }}{{ .Title }}{{ end }}</a>&nbsp;>&nbsp;{{ .Title }}</h1>
+	<h1 class="title">{{ with .Parent }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}&nbsp;>&nbsp;{{ .Title }}</h1>
 	<!-- TODO Parent in a bubble, add the same bubble in section and single pages. -->
 	{{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
 </div>
