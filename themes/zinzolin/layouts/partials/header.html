@@ -8,11 +8,14 @@
 {{ $currentPage := . }}
 {{ range site.Menus.header }}
 	{{ if $currentPage.IsMenuCurrent .Menu . }}
-	<a class="active item" aria-current="page" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+	{{ $section := .Identifier }}
+	<a class="active item" aria-current="page" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}<span class="count">{{ with $.Site.GetPage "section" $section }}{{ len (where $.Site.RegularPages "Section" $section) }}{{ end }}</span></a>
 	{{ else if $currentPage.HasMenuCurrent .Menu . }}
-	<a class="active item" aria-current="true" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+	{{ $section := .Identifier }}
+	<a class="active item" aria-current="true" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}<span class="count">{{ with $.Site.GetPage "section" $section }}{{ len (where $.Site.RegularPages "Section" $section) }}{{ end }}</span></a>
 	{{ else }}
-	<a class="item" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+	{{ $section := .Identifier }}
+	<a class="item" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}<span class="count">{{ with $.Site.GetPage "section" $section }}{{ len (where $.Site.RegularPages "Section" $section) }}{{ end }}</span></a>
 	{{ end }}
 {{ end }}
 </nav>

@@ -72,7 +72,7 @@ ol[role='list'] {
 }
 
 body {
-	background: var(--background);
+	background: var(--b-background);
 	color: var(--text);
 	display: grid;
 		grid-template-columns: 3em 1fr 3em 3fr 3em;
@@ -122,7 +122,8 @@ h6 {
 	align-self: end;
 	color: var(--h-text);
 	font-size: 1.618em;
-	line-height: 1;
+	font-weight: 800;
+	line-height: .95em;
 	grid-row: 1;
 	text-transform: lowercase;
 }
@@ -178,8 +179,15 @@ h6 {
 	color: var(--theme);
 }
 
+#header .menu .item .count {
+	font-size: .618em;
+	line-height: 1;
+	opacity: .618;
+	vertical-align: super;
+}
+
 .wrapper {
-	background: white;
+	background: var(--m-background);
 	border: 1px solid var(--m-border);
 	border-radius: 1em;
 	box-shadow: 0 .5em 1em 0 var(--m-shadow);
@@ -196,12 +204,19 @@ h6 {
 	grid-row: 2/-2;
 }
 
+#main .section {
+	margin-block-end: 5em;
+}
+
+#main .section .heading h1 {
+	font-weight: 800;
+}
+
 #main .section .list .item {
 	display: flex;
 		align-items: center;
 		gap: 1em;
 		justify-content: space-between;
-	margin: 0 0 1em 0;
 	width: 100%;
 }
 
@@ -212,7 +227,7 @@ h6 {
 }
 
 #main .section .list time {
-	color: var(--subtext);
+	opacity: .618;
 	text-align: right;
 }
 
@@ -230,7 +245,8 @@ h6 {
 }
 
 #main .content h1 {
-	font-size: 3em;
+	font-size: 1.618em;
+	font-weight: 800;
 	line-height: .95em;
 }
 

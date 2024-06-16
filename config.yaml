@@ -10,19 +10,29 @@ markup:
       unsafe: true
 menus:
     header:
-    - name: "écrire"
+    - identifier: "ecrire"
+      name: "écrire"
       pageRef: /ecrire
       title: "Lire toutes les notes"
+      section: "ecrire"
       weight: 1
-    - name: "lire"
+    - identifier: "lire"
+      name: "lire"
       pageRef: /lire
       title: "Lire toutes les notes de lecture"
+      section: "lire"
       weight: 2
-    - name: "marcher"
+    - identifier: "marcher"
+      name: "marcher"
       pageRef: /marcher
       title: "Lire toutes les notes en chemin"
+      section: "marcher"
       weight: 3
 params:
+    mainSections:
+    - ecrire
+    - lire
+    - marcher
     tint: 320
 theme: "zinzolin"
 timeZone: "Europe/Paris"
