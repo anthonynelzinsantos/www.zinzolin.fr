@@ -171,9 +171,14 @@ h6 {
 	padding: .1em .5em .1em .5em;
 }
 
-#header .menu .item:focus,
-#header .menu .item:hover,
 #header .menu .active {
+	border: 1px solid var(--h-accent);
+	background: var(--h-accent);
+	color: var(--theme);
+}
+
+#header .menu .item:focus,
+#header .menu .item:hover {
 	background: var(--h-text);
 	border: 1px solid var(--h-accent);
 	color: var(--theme);
@@ -186,9 +191,12 @@ h6 {
 	vertical-align: super;
 }
 
-#header .menu .item:focus .count,
-#header .menu .item:hover .count,
 #header .menu .active .count {
+	color: var(--theme);
+}
+
+#header .menu .item:focus .count,
+#header .menu .item:hover .count {
 	color: var(--theme);
 }
 
@@ -210,12 +218,17 @@ h6 {
 	grid-row: 2/-2;
 }
 
-#main .section {
-	margin-block-end: 5em;
+#main .section + .section {
+	margin-block-start: 5em;
 }
 
-#main .section .heading h1 {
+#main .heading .title {
 	font-weight: 800;
+}
+
+#main .heading .subtitle {
+	font-weight: 600;
+	margin-block-start: 1em;
 }
 
 #main .section .list .item {

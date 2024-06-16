@@ -6,7 +6,7 @@
 <div class="section">
 	{{ with .Site.GetPage "section" $section }}
 	<div class="heading">
-		<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		<h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 		{{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
 	</div>
 	{{ end }}
