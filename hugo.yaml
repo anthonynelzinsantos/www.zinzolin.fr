@@ -4,6 +4,14 @@ copyright: "Anthony <nobr>Nelzin-Santos</nobr> — Tous droits réservés"
 defaultContentLanguage: "fr"
 disableHugoGeneratorInject: true
 languageCode: "fr"
+languages:
+    fr:
+        params:
+            mainSections:
+            - ecrire
+            - lire
+            - marcher
+            tint: 320
 markup:
   goldmark:
     renderer:
@@ -28,12 +36,6 @@ menus:
       title: "Lire toutes les notes en chemin"
       section: "marcher"
       weight: 3
-params:
-    mainSections:
-    - ecrire
-    - lire
-    - marcher
-    tint: 320
 taxonomies:
     author: auteur
     index: index
