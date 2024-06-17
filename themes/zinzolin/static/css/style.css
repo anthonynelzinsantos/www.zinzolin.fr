@@ -176,13 +176,11 @@ h6 {
 
 #header .menu .active {
 	border: 1px solid var(--h-accent);
-	background: var(--h-accent);
-	color: var(--theme);
 }
 
 #header .menu .item:focus,
 #header .menu .item:hover {
-	background: var(--h-text);
+	background: var(--h-hover);
 	border: 1px solid var(--h-accent);
 	color: var(--theme);
 }
@@ -192,10 +190,6 @@ h6 {
 	font-size: .618rem;
 	line-height: 1;
 	vertical-align: super;
-}
-
-#header .menu .active .count {
-	color: var(--theme);
 }
 
 #header .menu .item:focus .count,
