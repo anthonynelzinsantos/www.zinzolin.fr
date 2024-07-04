@@ -8,7 +8,7 @@ author:
 index:
 - "Encre"
 - "Lamy"
-colour: "zinzolin"
+tint: 330
 slug: lamy-dark-lilac
 ---
 

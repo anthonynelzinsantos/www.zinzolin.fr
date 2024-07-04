@@ -9,7 +9,7 @@ author:
 index:
 - "Encre"
 - "L’Artisan Pastellier"
-colour: "violet"
+tint: 315
 slug: artisan-pastellier-violette
 ---
 

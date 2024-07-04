@@ -9,7 +9,7 @@ author:
 index:
 - "Encre"
 - "Lamy"
-colour: "garnet"
+tint: 15
 slug: lamy-vibrant-pink
 ---
 

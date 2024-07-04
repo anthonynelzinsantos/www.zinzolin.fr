@@ -8,7 +8,7 @@ author:
 index:
 - "Encre"
 - "Pilot"
-colour: "indigo"
+tint: 290
 slug: pilot-jurojin
 ---
 

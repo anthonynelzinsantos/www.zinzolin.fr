@@ -8,7 +8,7 @@ author:
 index:
 - "Encre"
 - "Montblanc"
-colour: "violet"
+tint: 350
 slug: montblanc-lavender-purple
 ---
 

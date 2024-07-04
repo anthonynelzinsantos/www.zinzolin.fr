@@ -8,7 +8,7 @@ author:
 index:
 - "Encre"
 - "Herbin"
-colour: "mauve"
+tint: 295
 slug: herbin-violette-pensee
 ---
 
