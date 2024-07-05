@@ -8,9 +8,9 @@ languages:
     fr:
         params:
             mainSections:
-            - ecrire
-            - lire
-            - marcher
+            - e
+            - l
+            - m
             tint: 320
 markup:
   goldmark:
@@ -18,27 +18,26 @@ markup:
       unsafe: true
 menus:
     header:
-    - identifier: "ecrire"
+    - identifier: "e"
       name: "écrire"
-      pageRef: /ecrire
+      pageRef: /e
       title: "Lire toutes les notes"
-      section: "ecrire"
+      section: "e"
       weight: 1
-    - identifier: "lire"
+    - identifier: "l"
       name: "lire"
-      pageRef: /lire
+      pageRef: /l
       title: "Lire toutes les notes de lecture"
-      section: "lire"
+      section: "l"
       weight: 2
-    - identifier: "marcher"
+    - identifier: "m"
       name: "marcher"
-      pageRef: /marcher
+      pageRef: /m
       title: "Lire toutes les notes en chemin"
-      section: "marcher"
+      section: "m"
       weight: 3
 taxonomies:
-    author: auteur
-    index: index
+    index: i
 theme: "zinzolin"
 timeZone: "Europe/Paris"
 timeout: 60s
