@@ -6,13 +6,6 @@
 		</div>
 		
 		<div class="section">
-			<h1>Auteur</h1>
-			{{ range .Params.Author }}
-				<a href="{{ "/auteur/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-			{{ end }}
-		</div>
-		
-		<div class="section">
 			<h1>Index</h1>
 			{{ range .Params.Index }}
 				<a href="{{ "/index/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
@@ -22,10 +15,14 @@
 {{ end }}
 
 {{ define "main" }}
-	<div class="content">
+	<article class="single">
+		{{ with .Parent }}<a class="parent" href="{{ .Permalink }}" title="Lire toutes les notes de la rubrique « {{ .Title }} »">{{ .Title }}</a>{{ end }}
+	
 		<h1 class="title">{{ .Title | markdownify }}</h1>
 		
-		{{ .Content }}
-	</div>
+		<div class="content">
+			{{ .Content }}
+		</div>
+	</article>
 {{ end }}
 

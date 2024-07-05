@@ -123,7 +123,7 @@ h6 {
 	color: var(--h-text);
 	font-size: 1.618rem;
 	font-weight: 800;
-	line-height: .95rem;
+	line-height: .95;
 	grid-row: 1;
 	text-transform: lowercase;
 }
@@ -165,7 +165,6 @@ h6 {
 		flex-flow: row wrap;
 		gap: .618rem 1rem;
 	grid-row: -1;
-	line-height: 2rem;
 }
 
 #header .menu .item {
@@ -228,7 +227,8 @@ h6 {
 #sidebar .section a {
 	border: 1px solid;
 	border-radius: 1rem;
-	padding: .25rem .5rem .25rem .5rem;
+	display: inline-block;
+	padding: 0 .5rem 0 .5rem;
 }
 
 #sidebar .section a:focus,
@@ -286,6 +286,25 @@ h6 {
 	text-align: right;
 }
 
+#main .single .parent {
+	border: 1px solid;
+	border-radius: 1rem;
+	display: inline-block;
+	padding: 0 .5rem 0 .5rem;
+}
+
+#main .single .parent:focus,
+#main .single .parent:hover {
+	background: var (--m-hover);
+}
+
+#main .single h1 {
+	font-size: 2.56rem;
+	font-weight: 800;
+	line-height: .95;
+	margin: .5rem 0 3rem 0;
+}
+
 #main .content a[href]:after {
 	font-size: .9rem;
 	line-height: 1;
@@ -297,12 +316,6 @@ h6 {
 	color: var(--subtext);
 	margin: 0 0 1rem 0;
 	padding: 0 0 0 1rem;
-}
-
-#main .content h1 {
-	font-size: 1.618rem;
-	font-weight: 800;
-	line-height: .95rem;
 }
 
 #main .content h2 {
